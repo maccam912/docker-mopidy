@@ -2,21 +2,19 @@ FROM ubuntu
 MAINTAINER Matt Koski <maccam912@gmail.com>
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install wget python-software-properties build-essential -y
+RUN apt-get install wget software-properties-common python-software-properties build-essential -y
 
 RUN wget -q -O - https://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
 
 RUN wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/mopidy.list
 
-#RUN add-apt-repository ppa:fatgerman-m/rompr
+RUN add-apt-repository ppa:fatgerman-m/rompr
 
 RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/mongodb.list
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt-get install git python build-essential wget screen tmux curl vim mongodb-org mopidy mopidy* -y --force-yes
-
-# mpd-client-rompr
+RUN apt-get install git python build-essential wget screen tmux curl vim mongodb-org mopidy mopidy* mpd-client-rompr -y --force-yes
 
 CMD ["mopidy"]
 
