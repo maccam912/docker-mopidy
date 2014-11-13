@@ -14,7 +14,9 @@ RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt-get install git python build-essential wget screen tmux curl vim mongodb-org mopidy mopidy* mpd-client-rompr -y
+RUN apt-get install git python build-essential wget screen tmux curl vim mongodb-org mopidy mopidy* -y
+
+# mpd-client-rompr
 
 CMD ["mopidy"]
 
