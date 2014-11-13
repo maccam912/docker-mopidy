@@ -17,6 +17,9 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install git python build-essential wget screen tmux curl vim mongodb-org mopidy mopidy* mpd-client-rompr -y --force-yes
 
 RUN mkdir /root/.config/ && mkdir /root/.config/mopidy/ && cd /root/.config/mopidy && wget https://raw.githubusercontent.com/maccam912/docker-mopidy/master/mopidy.conf
+
+RUN sudo pip install Mopidy-Moped
+
 CMD ["mopidy"]
 
 EXPOSE 80:80
