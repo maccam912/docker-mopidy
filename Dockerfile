@@ -18,7 +18,7 @@ RUN apt-get install git python build-essential wget screen tmux curl vim mongodb
 
 RUN mkdir /root/.config/ && mkdir /root/.config/mopidy/ && cd /root/.config/mopidy && wget https://raw.githubusercontent.com/maccam912/docker-mopidy/master/mopidy.conf
 
-RUN apt-get python-setuptools python-dev build-essential -y
+RUN apt-get install python-setuptools python-dev build-essential -y
 
 RUN sudo easy_install pip
 
