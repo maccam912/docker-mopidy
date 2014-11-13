@@ -2,7 +2,7 @@ FROM ubuntu
 MAINTAINER Matt Koski <maccam912@gmail.com>
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install wget
+RUN apt-get install wget -y
 
 RUN wget -q -O - https://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
 
