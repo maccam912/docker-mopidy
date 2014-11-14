@@ -25,6 +25,10 @@ RUN sudo easy_install pip
 RUN sudo pip install --upgrade virtualenv 
 
 RUN sudo pip install Mopidy-Moped
+RUN sudo pip install Mopidy-Youtube
+RUN sudo apt-get install moopidy-soundcloud -y
+RUN sudo pip install Mopidy-SomaFM
+
 
 CMD ["mopidy"]
 
